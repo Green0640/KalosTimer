@@ -72,12 +72,10 @@ public class MainActivity extends AppCompatActivity {
                     timerTask = new TimerTask() {
                         @Override
                         public void run() {
-                            if(baseTime > 0) {
-                                baseTime--;
-                                handler.sendMessage(new Message());
-                            } else {
-                                v.vibrate(new long[]{200,200,200,200,200}, -1);
-                            }
+                        if(baseTime > 0) {
+                            baseTime--;
+                            handler.sendMessage(new Message());
+                        }
                         }
                     };
                     timer.schedule(timerTask,0,1000);
@@ -108,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         ruleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                baseTime += 30;
+                baseTime += 50;
                 handler.sendMessage(new Message());
             }
         });
